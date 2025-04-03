@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Народная Аптека</title>
+  <title>Как вы себя чувствуете?</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #1a2b22;
-      color: #e8e6e3;
+      background-color: #1c1c1e;
+      color: #f0f0f0;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -24,67 +24,135 @@
       box-sizing: border-box;
     }
 
-    .image-block {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      margin-bottom: 30px;
-    }
-
-    .image-block img {
-      width: 100%;
-      display: block;
-      border-radius: 16px;
-    }
-
     h1 {
       font-size: 32px;
       font-weight: 600;
-      color: #f0c54c;
+      color: #f5c542;
       text-align: center;
       margin-bottom: 20px;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #d1d0ce;
-      text-align: center;
-      margin-bottom: 35px;
+    #surveyModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
     }
 
-    .btn {
-      display: block;
-      width: fit-content;
-      margin: 0 auto;
-      background-color: #f0c54c;
-      color: #1a2b22;
-      text-decoration: none;
-      padding: 14px 28px;
+    .survey {
+      background: #2e2e30;
+      padding: 30px;
       border-radius: 10px;
-      font-size: 16px;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
+      color: #fff;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
-    .btn:hover {
-      background-color: #e0b740;
+    .survey h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .survey form div {
+      margin-bottom: 20px;
+    }
+
+    .survey button {
+      background-color: #f5c542;
+      color: #1c1c1e;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .survey button:hover {
+      background-color: #e0ab2f;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="image-block">
-      <img src="https://i.ibb.co/7dsRtgjk/apteka2.png" alt="Аптека — Марли и Флинт">
-    </div>
-    <h1>Народная Аптека</h1>
-    <p>Здесь вы найдёте тщательно отобранные средства — как натуральные, так и современные. Мы верим в баланс природы и эффективности.</p>
-    <a class="btn" href="https://t.me/shishishishkilnr_bot">Перейти в каталог</a>
+<div id="surveyModal">
+  <div class="survey">
+    <h2>Ответьте на короткий опрос</h2>
+    <form id="surveyForm">
+      <div>
+        <label>1. Как часто вы испытываете тревожные мысли?</label><br>
+        <input type="radio" name="q1" value="often"> Часто<br>
+        <input type="radio" name="q1" value="sometimes"> Иногда<br>
+        <input type="radio" name="q1" value="rarely"> Редко<br>
+        <input type="radio" name="q1" value="never"> Никогда<br>
+      </div>
+      <div>
+        <label>2. Когда вы в последний раз по-настоящему расслаблялись?</label><br>
+        <input type="radio" name="q2" value="today"> Сегодня<br>
+        <input type="radio" name="q2" value="week"> На этой неделе<br>
+        <input type="radio" name="q2" value="month"> В этом месяце<br>
+        <input type="radio" name="q2" value="dontremember"> Не помню<br>
+      </div>
+      <div>
+        <label>3. Что для вас означает веселье?</label><br>
+        <input type="radio" name="q3" value="friends"> Время с друзьями<br>
+        <input type="radio" name="q3" value="silence"> Покой и тишина<br>
+        <input type="radio" name="q3" value="movement"> Танцы, движение<br>
+        <input type="radio" name="q3" value="aloneness"> Быть наедине с собой<br>
+      </div>
+      <div>
+        <label>4. Знаете ли вы проверенные способы успокоения нервной системы?</label><br>
+        <input type="radio" name="q4" value="yes"> Да, использую<br>
+        <input type="radio" name="q4" value="some"> Слышал(а), но не пробовал(а)<br>
+        <input type="radio" name="q4" value="no"> Нет<br>
+        <input type="radio" name="q4" value="notcare"> Мне это не нужно<br>
+      </div>
+      <div>
+        <label>5. Бывает ли, что вы чувствуете себя истощённым?</label><br>
+        <input type="radio" name="q5" value="everyday"> Почти каждый день<br>
+        <input type="radio" name="q5" value="often"> Часто<br>
+        <input type="radio" name="q5" value="rarely"> Редко<br>
+        <input type="radio" name="q5" value="never"> Нет, никогда<br>
+      </div>
+      <div>
+        <label>6. Что вам помогает восстановить силы?</label><br>
+        <input type="radio" name="q6" value="sleep"> Сон<br>
+        <input type="radio" name="q6" value="walk"> Прогулка<br>
+        <input type="radio" name="q6" value="herbs"> Натуральные средства<br>
+        <input type="radio" name="q6" value="nothing"> Ничего не помогает<br>
+      </div>
+      <div>
+        <label>7. Есть ли у вас действенное средство от усталости?</label><br>
+        <input type="radio" name="q7" value="yes"> Да<br>
+        <input type="radio" name="q7" value="no"> Пока нет<br>
+        <input type="radio" name="q7" value="maybe"> Хотел(а) бы найти<br>
+        <input type="radio" name="q7" value="notinterested"> Не интересовался(ась)<br>
+      </div>
+      <div>
+        <label>8. Готовы ли вы попробовать что-то новое для душевного равновесия?</label><br>
+        <input type="radio" name="q8" value="yes"> Да, конечно<br>
+        <input type="radio" name="q8" value="depends"> Возможно<br>
+        <input type="radio" name="q8" value="no"> Нет<br>
+        <input type="radio" name="q8" value="notnow"> Не сейчас<br>
+      </div>
+      <button type="submit">Завершить</button>
+    </form>
   </div>
+</div>
+
+<script>
+  document.getElementById('surveyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('surveyModal').style.display = 'none';
+    window.location.href = "https://alkatrasi4ek.github.io/podapteka/";
+  });
+</script>
 
 </body>
 </html>
-
-
